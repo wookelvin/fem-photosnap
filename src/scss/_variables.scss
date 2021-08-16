@@ -1,0 +1,25 @@
+$gradient-color-1: #FFC593;
+$gradient-color-2: #BC7198;
+$gradient-color-3: #5A77FF;
+
+$gradient: linear-gradient( $gradient-color-1, $gradient-color-2, $gradient-color-3 );
+
+$color-black: #000;
+$color-light-grey: #dfdfdf;
+$color-white: #fff;
+
+
+.bg-main-accent { 
+  background: linear-gradient(45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3);
+}
+
+.bg-black { 
+  background: $color-black;
+}
+
+.bg-white { 
+  background: $color-white;
+}
+.bg-light-grey { 
+  background: $color-light-grey;
+}

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+h1,h2,h3,h4,h5,h6{ 
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 4.17px;
+  line-height:48px;
+}
+
+h2{ 
+  font-size: 24px;
+  line-height:25px;
+}
+h3{ 
+  font-size: 18px;
+  line-height:25px;
+}
+h4{ 
+  font-size: 12px;
+  line-height:16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+html,body{ 
+ font-family: 'DM Sans', sans-serif;
+ line-height: 25px;
+ font-size: 15px;
+}
