@@ -1,7 +1,11 @@
 <template>
-  <SiteHeader />
-  <RouterView />
-  <SiteFooter />
+  <div id="app">
+    <SiteHeader />
+    <main>
+      <RouterView />
+    </main>
+    <SiteFooter />
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,4 +23,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+html, body, #app{ 
+  min-height:100vh;
+}
+#app{ 
+  display: flex;
+  flex-direction: column;
+}
+main{ 
+  flex-grow: 1;
+}
+
 </style>

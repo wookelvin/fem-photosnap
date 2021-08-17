@@ -3,6 +3,7 @@ $gradient-color-2: #BC7198;
 $gradient-color-3: #5A77FF;
 
 $gradient: linear-gradient( $gradient-color-1, $gradient-color-2, $gradient-color-3 );
+$gradient-horizontal: linear-gradient( 90deg, $gradient-color-1, $gradient-color-2, $gradient-color-3 );
 
 $color-black: #000;
 $color-light-grey: #dfdfdf;
