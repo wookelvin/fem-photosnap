@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="to" :class="`${arrow?'arrow':''} ${variant}`">
+  <router-link :to="to" :class="`${arrow?'arrow':''} ${variant}`" class="button">
     <slot></slot>
     <img v-if="arrow" src="/shared/desktop/arrow.svg" alt="">
   </router-link>

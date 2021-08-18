@@ -50,18 +50,46 @@
       to="/"
     />
   </div>
+  <Grid class="features">
+    <GridCol>
+      <div class="img-container">
+        <img src="/features/desktop/responsive.svg" alt="Responsive icon" >
+      </div>
+      <h3>100% Responsive</h3>
+      <p>No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen.</p>
+    </GridCol>
+    <GridCol>
+      <div class="img-container">
+        <img src="/features/desktop/no-limit.svg" alt="Responsive icon" >
+      </div>
+      <h3>No Photo Upload Limit</h3>
+      <p>Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.</p>
+    </GridCol>
+    
+    <GridCol>
+      <div class="img-container">
+        <img src="/features/desktop/embed.svg" alt="Responsive icon" >
+      </div>
+      <h3>Available to Embed</h3>
+      <p>Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more. </p>
+    </GridCol>
+  </Grid>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import FullScreenSection from './../components/FullScreenSection.vue'
 import ArticleShortcut from './../components/ArticleShortcut.vue'
+import Grid from './../components/Grid.vue'
+import GridCol from './../components/GridCol.vue'
 
 export default defineComponent({
   name: 'Home',
   components:{ 
     FullScreenSection,
     ArticleShortcut,
+    Grid, 
+    GridCol
   }
 })
 </script>
@@ -69,5 +97,16 @@ export default defineComponent({
 <style lang="scss" scoped>
 .row{ 
   display:flex;
+}
+.features{ 
+  padding-top:4em;
+  padding-bottom: 4em;
+  .img-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:5em;
+    margin-bottom:3em;
+  }
 }
 </style>

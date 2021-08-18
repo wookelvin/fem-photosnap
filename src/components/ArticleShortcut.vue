@@ -1,9 +1,10 @@
 <template>
-  <router-link :to="to" class="card">
+  <router-link :to="to" class="card article-shortcut">
     <div class="inner">
       <img :src="img" :alt="alt" class="bg-img"/>
       <div class="bg-gradient" />
       <div class="text-content">
+        <h4>{{heading}}</h4>
         <h2>{{title}}</h2>
         <div>{{subtitle}}</div>
         <hr/>
@@ -27,6 +28,7 @@ export default defineComponent({
     alt: String,
     title: String, 
     subtitle: String,
+    heading: String,
     to: String,
   }
 })
@@ -91,5 +93,9 @@ hr{
   left:0;
   right:0;
   bottom:0;
+}
+h2{ 
+  margin-top:0;
+  margin-bottom:0%
 }
 </style>

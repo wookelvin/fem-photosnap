@@ -1,10 +1,15 @@
 # Frontend Mentor - Photosnap Website solution
 
-This is a solution to the [Photosnap Website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Photosnap Website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Site Preview
+
+Located here https://wookelvin.github.io/fem-photosnap/
 
 ## Table of contents
 
 - [Frontend Mentor - Photosnap Website solution](#frontend-mentor---photosnap-website-solution)
+  - [Site Preview](#site-preview)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)

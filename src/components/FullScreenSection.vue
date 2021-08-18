@@ -6,7 +6,7 @@
         <div class="text-content">
           <h1>{{ headingText }}</h1>
           <p>{{ paragraphText }}</p>
-          <Button arrow :variant="darkMode?'light':'dark'" :to="to" @click="onClick">{{ linkText }}</Button>
+          <Button v-if="to" arrow :variant="darkMode?'light':'dark'" :to="to" @click="onClick">{{ linkText }}</Button>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ export default defineComponent({
   }
 }
 .col-text{ 
-  width:45%;
+  width:35%;
   box-sizing: border-box;
   display:flex;
   flex-direction: column;
