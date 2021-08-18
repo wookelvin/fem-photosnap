@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import BusyService from './../services/BusyService';
 
 const routes = [
   {
@@ -33,5 +33,11 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 })
+
+router.beforeEach((to, from, next)=>{ 
+  const { busy, updateBusy } = BusyService();
+  updateBusy(true);
+  setTimeout(()=>next(), 200);
+});
 
 export default router

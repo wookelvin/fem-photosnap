@@ -46,12 +46,13 @@ t<template>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import FullScreenSection from './../components/FullScreenSection.vue';
 import Grid from './../components/Grid.vue';
 import GridCol from './../components/GridCol.vue';
 import CallToAction from './Shared/CallToAction.vue';
 import Button from './../components/Button.vue';
+import BusyService from '../services/BusyService';
 
 export default defineComponent({
   name: 'Pricing',
@@ -148,7 +149,13 @@ export default defineComponent({
         }
       }
     ]
-  })
+  }), 
+  setup(){ 
+    const { busy, updateBusy } = BusyService();
+    onMounted(() => { 
+      updateBusy(false);
+    })
+  }
 })
 </script>
 

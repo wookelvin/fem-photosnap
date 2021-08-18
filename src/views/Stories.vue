@@ -26,9 +26,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import FeatureHero from './../components/FeatureHero.vue'
 import ArticleShortcut from './../components/ArticleShortcut.vue'
+import BusyService from '../services/BusyService';
 
 export default defineComponent({
   name: 'Stories',
@@ -150,7 +151,13 @@ export default defineComponent({
       subTitle: 'by William Malcolm',
       linkText: 'Read Story',
     }]
-  })
+  }), 
+  setup(){ 
+    const { busy, updateBusy } = BusyService();
+    onMounted(() => { 
+      updateBusy(false);
+    })
+  }
 })
 </script>
 

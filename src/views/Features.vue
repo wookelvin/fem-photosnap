@@ -21,7 +21,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import BusyService from '../services/BusyService';
 import FullScreenSection from './../components/FullScreenSection.vue';
 import Grid from './../components/Grid.vue';
 import GridCol from './../components/GridCol.vue';
@@ -68,7 +69,13 @@ export default defineComponent({
         text: 'Easily drag and drop your image and get beautiful shots everytime. No over the top tooling to add friction to creating stories.',
       }
     ]
-  })
+  }), 
+  setup(){ 
+    const { busy, updateBusy } = BusyService();
+    onMounted(() => { 
+      updateBusy(false);
+    })
+  }
 })
 </script>
 

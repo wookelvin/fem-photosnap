@@ -15,5 +15,6 @@ export default defineComponent({
 .grid-col{ 
   padding: 2em;
   text-align: center;
+  width: 33.333%;
 }
 </style>

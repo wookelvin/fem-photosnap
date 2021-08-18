@@ -49,13 +49,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import BusyService from '../services/BusyService';
 import Button from './../components/Button.vue'
 
 export default defineComponent({
   name: 'UI',
   components:{ 
     Button
+  }, 
+  setup(){ 
+    const { busy, updateBusy } = BusyService();
+    onMounted(() => { 
+      updateBusy(false);
+    })
   }
 })
 </script>
