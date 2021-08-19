@@ -1,10 +1,12 @@
 <template>
   <FullScreenSection
-    img="/features/desktop/hero.jpg"
+    imgInitPath="/features"
+    imgFileName="hero.jpg"
     headingText="Features"
     paragraphText="We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories."
     darkMode
     textLeft
+    responsiveCenter="35% center"
   />
 
   <Grid class="features">
@@ -80,9 +82,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import "./../scss/_variables.scss";
+
 .grid-col{ 
-  flex:initial;
-  width: 33.333%;
   padding-top:6em;
   padding-bottom: 6em;
 }
@@ -95,6 +97,11 @@ export default defineComponent({
     justify-content: center;
     height:5em;
     margin-bottom:3em;
+  }
+}
+@media screen and (max-width: $width-md-lg){ 
+  .grid-col{ 
+    width: 40%;
   }
 }
 </style>

@@ -2,11 +2,9 @@
   <div class="call-to-action">
     <img src="/shared/desktop/bg-beta.jpg">
     <div class="gradient"></div>
-    <div class="text-content">
-      <div class="container">
-        <h1>We're in Beta. Get your invite today!</h1>
-        <div><Button to="/" variant="light" arrow>Get an Invite</Button></div>
-      </div>
+    <div class="text-content container">
+      <h1>We're in Beta. Get your invite today!</h1>
+      <div><Button to="/" variant="light" arrow>Get an Invite</Button></div>
     </div>
   </div>
 </template>
@@ -28,10 +26,16 @@ export default defineComponent({
 
 .call-to-action{ 
   position: relative;
+  
 }
 img{ 
   width:100%;
   display:block;
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  z-index:-1;
 }
 .gradient{ 
   position:absolute;
@@ -42,15 +46,12 @@ img{
   background: $gradient-reverse;
 }
 .text-content{ 
-  position: absolute;
   color:white;
-  top: 0;
-  left:0;
-  width:100%;
-  height:100%;
   display:flex;
   align-items:center;
   justify-content: center;
+  padding-top:3em;
+  padding-bottom:3em;
 }
 .container{ 
   width:100%;
@@ -59,7 +60,7 @@ img{
   justify-content:space-between;
 }
 h1 { 
-  max-width:300px;
+  max-width:350px;
   line-height:1.2em;
 }
 </style>

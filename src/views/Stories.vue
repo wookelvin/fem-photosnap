@@ -13,7 +13,7 @@
 
   </div>
 
-  <div class="row">
+  <ArticleShortcutContainer>
     <ArticleShortcut v-for="(s,i) of stories" :key="i"
       :alt="s.title"
       :img="s.img"
@@ -22,20 +22,22 @@
       :subtitle="s.subTitle"
       to="/"
     />
-  </div>
+  </ArticleShortcutContainer>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
 import FeatureHero from './../components/FeatureHero.vue'
 import ArticleShortcut from './../components/ArticleShortcut.vue'
+import ArticleShortcutContainer from './../components/ArticleShortcutContainer.vue'
 import BusyService from '../services/BusyService';
 
 export default defineComponent({
   name: 'Stories',
   components: {
     FeatureHero, 
-    ArticleShortcut
+    ArticleShortcut, 
+    ArticleShortcutContainer
   }, 
   data:() => ({ 
     stories:[
@@ -162,12 +164,4 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.row{ 
-  display:flex;
-  flex-wrap: wrap;
-  .article-shortcut{ 
-    width: 25%;
-    flex:inherit;
-  }  
-}
 </style>

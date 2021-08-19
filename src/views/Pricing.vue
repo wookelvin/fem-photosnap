@@ -1,6 +1,7 @@
 t<template>
   <FullScreenSection
-    img="/pricing/desktop/hero.jpg"
+    imgInitPath="/pricing"
+    imgFileName="hero.jpg"
     headingText="Pricing"
     paragraphText="Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos."
     darkMode
@@ -10,12 +11,17 @@ t<template>
       <div class="pricing-hero">
         <div class="pricing-col" v-for="p of pricing" :key="'pricing-col'+p.name" :class="{'pricing-col-main':p.name === 'Pro'}">
           <div class="pricing-col-inner">
-            <div class="gradient" v-if="p.name === 'Pro'"></div>
-            <h2>{{p.name}}</h2>
-            <p>{{p.description}}</p>
-            <div class="price">{{monthly ? p.pricePerMonth : p.pricePerYear}}</div>
-            <div class="term">{{monthly ? 'per month' : 'per year'}}</div>
-            <Button :variant="p.name === 'Pro' ? 'light':'dark'">Pick Plan</Button>
+            <div class="md-col">
+              <div class="gradient" v-if="p.name === 'Pro'"></div>
+              <h2>{{p.name}}</h2>
+              <p>{{p.description}}</p>
+              <Button :variant="p.name === 'Pro' ? 'light':'dark'" class="show lg-hide">Pick Plan</Button>
+            </div>
+            <div class="md-col md-col-2">
+              <div class="price">{{monthly ? p.pricePerMonth : p.pricePerYear}}</div>
+              <div class="term">{{monthly ? 'per month' : 'per year'}}</div>
+              <Button :variant="p.name === 'Pro' ? 'light':'dark'" class="hide lg-show">Pick Plan</Button>
+            </div>
           </div>
         </div>
       </div>
@@ -203,6 +209,27 @@ export default defineComponent({
     font-weight:bold;
     font-size:2.5em;
     margin: 2rem 0 0.5em;
+  }
+  .md-col-2{ 
+    .button{ 
+      display:block;
+      margin-top:2em;
+    }
+  }
+
+  @media screen and (max-width: $width-md-lg) { 
+    display:block;
+    .pricing-col-inner{ 
+      text-align: left;
+      display:flex;
+      justify-content:  space-between;
+    }
+    .md-col{ 
+      width: 50%;
+    }
+    .md-col-2{ 
+      text-align:right;
+    }
   }
 }
 

@@ -37,7 +37,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "./../scss/_variables.scss";
 .card{ 
-  flex: 1;
+  width:25%;
+}
+
+@media screen and (max-width:$width-md-lg){ 
+  .card{
+    width: 50%;
+  }
 }
 .inner{ 
   position: relative;

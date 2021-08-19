@@ -1,6 +1,7 @@
 <template>
   <FullScreenSection
-    img="/home/desktop/create-and-share.jpg"
+    imgInitPath="/home"
+    imgFileName="create-and-share.jpg"
     headingText="Create and share your photo Stories"
     paragraphText="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
     linkText="Get An Invite"
@@ -8,19 +9,22 @@
     textLeft
   />
   <FullScreenSection
-    img="/home/desktop/beautiful-stories.jpg"
+    imgInitPath="/home"
+    imgFileName="beautiful-stories.jpg"
     headingText="Beautiful stories every time"
     paragraphText="We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone."
     linkText="View The Stories"
+    responsiveCenter="25% center"
   />
   <FullScreenSection
-    img="/home/desktop/designed-for-everyone.jpg"
+    imgInitPath="/home"
+    imgFileName="designed-for-everyone.jpg"
     headingText=" Designed for everyone"
     paragraphText="Photosnap can help you create stories that resonate with your audience.  Our tool is designed for photographers of all levels, brands, businesses you name it. "
     linkText="View The Stories"
     textLeft
   />
-  <div class="row">
+  <ArticleShortcutContainer>
     <ArticleShortcut
       img="/stories/desktop/mountains.jpg"
       alt="Mountains"
@@ -49,7 +53,7 @@
       subtitle="by Samantha Brooke"
       to="/"
     />
-  </div>
+  </ArticleShortcutContainer>
   <Grid class="features">
     <GridCol>
       <div class="img-container">
@@ -80,6 +84,7 @@
 import { defineComponent, onMounted } from 'vue'
 import FullScreenSection from './../components/FullScreenSection.vue'
 import ArticleShortcut from './../components/ArticleShortcut.vue'
+import ArticleShortcutContainer from './../components/ArticleShortcutContainer.vue'
 import Grid from './../components/Grid.vue'
 import GridCol from './../components/GridCol.vue'
 import BusyService from './../services/BusyService'
@@ -90,6 +95,7 @@ export default defineComponent({
   components:{ 
     FullScreenSection,
     ArticleShortcut,
+    ArticleShortcutContainer,
     Grid, 
     GridCol
   }, 
@@ -103,9 +109,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.row{ 
-  display:flex;
-}
+
 .features{ 
   padding-top:4em;
   padding-bottom: 4em;

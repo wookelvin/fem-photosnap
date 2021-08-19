@@ -43,10 +43,17 @@ export default defineComponent({
 
 .feature-hero{ 
   position: relative;
+  min-height:500px;
 }
 img{ 
+  position:absolute;
+  top:0;
+  left:0;
   display:block;
   width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position: center center;
 
 }
 .text-content{ 

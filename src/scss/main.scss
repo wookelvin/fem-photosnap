@@ -11,8 +11,27 @@ html,body{
   max-width:1200px;
   margin-left:auto;
   margin-right:auto;
+  padding-left:2em;
+  padding-right:2em;
 }
 
 div{ 
   box-sizing: border-box;
+}
+
+.hide{ 
+  display:none !important;
+}
+.show{ 
+  display:initial;
+}
+
+@media screen and (min-width: $width-md-lg){
+  .lg-show{ 
+    display:initial !important;
+  }
+
+  .lg-hide{ 
+    display: none !important;
+  }
 }

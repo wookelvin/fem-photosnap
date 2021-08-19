@@ -38,6 +38,7 @@ a{
   margin-bottom:5px;
   display:inline-block;
   line-height:1em;
+  text-align:center;
   &:hover{ 
     background: $color-light-grey;
     color: $color-black;

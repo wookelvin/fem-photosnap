@@ -10,8 +10,8 @@
         </div>
       </div>
     </div>
-    <div class="col-pic">
-      <img :src="img" :alt="alt" >
+    <div class="col-pic" >
+      <ResponsiveImg :initPath="imgInitPath" :filename="imgFileName" :alt="alt" :objectCenter="responsiveCenter"/>
     </div>
   </div>
 </template>
@@ -19,21 +19,28 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Button from './Button.vue'
+import ResponsiveImg from './ResponsiveImg.vue'
 
 export default defineComponent({
   name: 'FullScreenSection',
   components: { 
     Button,
+    ResponsiveImg,
   },
   props: {
-    img: String, 
+    imgInitPath: String, 
+    imgFileName: String,
     alt: String,
     headingText: String, 
     paragraphText: String, 
     linkText: String, 
     to: String,
     darkMode: Boolean,
-    textLeft: Boolean
+    textLeft: Boolean, 
+    responsiveCenter: { 
+      type: String, 
+      default: 'center center'
+    }
   }, 
   emits:['click'],
   methods:{ 
@@ -52,6 +59,7 @@ export default defineComponent({
   display:flex;
   align-items: stretch;
   overflow:hidden;
+  position:relative;
   &.dark-mode{ 
     background: black;
     color:white;
@@ -64,6 +72,11 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: $width-md-lg) {
+  .col-text{ 
+    width:65%;
+  }
+}
 .row.text-right{ 
   .col-text{ 
     order: 2;
@@ -74,11 +87,10 @@ export default defineComponent({
 }
 .col-pic{ 
   flex-grow: 1;
+  position:relative;
 }
-img{ 
+.responsive-img{ 
   height:100%;
-  width:100%;
-  object-fit: cover;
 }
 h1{ 
   margin-top:0;
@@ -88,12 +100,26 @@ h1{
   width:100%;
 }
 .gradient{ 
-  width:6px;
+  width:12px;
   height:100%;
   background:$gradient;
 }
 .text-content{ 
   flex-grow:1;
   padding: 0 6em;
+}
+.img-lg{ 
+  display:block;
+}
+.img-md{ 
+  display:none;
+}
+@media screen and (max-width: $width-md-lg) {
+ .img-lg{ 
+    display:none;
+  }
+  .img-md{ 
+    display:block;
+  }
 }
 </style>
